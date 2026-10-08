@@ -1,0 +1,49 @@
+{
+  "productions": [
+    {
+      "name": "P1_Rozwin_X",
+      "priority": 1,
+      "danglingEdges": "delete",
+      "left": {
+        "vertices": [
+          { "index": 0, "label": "A" },
+          { "index": 1, "label": "X" }
+        ],
+        "edges": [
+          { "u": 0, "v": 1 }
+        ]
+      },
+      "right": {
+        "vertices": [
+          { "index": 0, "label": "A" },
+          { "index": 1, "label": "Y" },
+          { "index": 2, "label": "Z" }
+        ],
+        "edges": [
+          { "u": 0, "v": 1 },
+          { "u": 1, "v": 2 }
+        ]
+      },
+      "mapping": [
+        { "left": 0, "right": 0 }
+      ],
+      "embedding": [
+        {
+          "leftVertex": 1,
+          "neighborLabel": "*",
+          "connectTo": [2]
+        }
+      ],
+      "negativeConditions": []
+    }
+  ],
+  "executionPolicy": {
+    "strategy": "priority_first_match",
+    "conflictResolution": "first_found",
+    "maxSteps": 10,
+    "stopConditions": {
+      "noMatchFound": true,
+      "maxVertices": 100
+    }
+  }
+}
